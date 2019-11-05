@@ -9,7 +9,7 @@ const FavBook=loadable(()=>import('./pages/favBook/favbook'))
 const Userselect =loadable(()=>import('./pages/User/userselcet'))
 const Userupdate =loadable(()=>import('./pages/User/userupdate'))
 
-const UserAdd =loadable(()=>import("./pages/user/add"))
+const UserAdd =loadable(()=>import("./pages/User/add"))
 
 
 class RootRoute extends React.Component{
