@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox,message,Card } from 'antd';
 import Style from './index.module.less'
@@ -41,7 +40,9 @@ class Login extends Component {
                         忘记密码
                       </a>
                       <br/>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
+                        <Button type="primary" htmlType="submit" className="login-form-button" onClick={()=>{
+                          this.props.history.push('/admin')
+                        }}>
                             登录
                         </Button>
                       <br/>

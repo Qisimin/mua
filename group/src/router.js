@@ -4,14 +4,12 @@ import loadable from './utils/loadable'
 
 const Login =loadable(()=>import('./pages/login/login'))
 const Admin =loadable(()=>import('./pages/admin/admin'))
-
 const FavBook=loadable(()=>import('./pages/favBook/favbook'))
 const Userselect =loadable(()=>import('./pages/user/userselcet'))
 const Userupdate =loadable(()=>import('./pages/user/userupdate'))
-
 const UserAdd =loadable(()=>import("./pages/user/add"))
 const Reg=loadable(()=>import('./pages/reg/reg'))
-
+const Logout=loadable(()=>import('./pages/logout/logout'))
 
 class RootRoute extends React.Component{
     render(){
@@ -29,10 +27,11 @@ class RootRoute extends React.Component{
                                 <Route path='/admin/user/select' component={Userselect}></Route> 
                                 <Route path='/admin/user/update' component={Userupdate}></Route> 
                                 <Route path='/admin/user/add' component={UserAdd}></Route>  
-                                {/* <Route path='/reg' component={Reg}></Route>             */}
+                                <Route path='/admin/logout' component={Logout}></Route> 
                           </Admin>
                         )
                     }}></Route>
+                    
                 </Switch>
             </HashRouter>
         )
