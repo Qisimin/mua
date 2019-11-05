@@ -4,7 +4,9 @@ import loadable from './utils/loadable'
 
 const Login =loadable(()=>import('./pages/login/login'))
 const Admin =loadable(()=>import('./pages/admin/admin'))
-
+const FavBook=loadable(()=>import('./pages/favBook/favbook'))
+const Userselect =loadable(()=>import('./pages/User/userselcet'))
+const Userupdate =loadable(()=>import('./pages/User/userupdate'))
 class RootRoute extends React.Component{
     render(){
         return(
@@ -16,7 +18,9 @@ class RootRoute extends React.Component{
                         return(
                             <Admin>
                                 {/*<Route path='/admin/home' component={Home}></Route> */}
-                                
+                                <Route path='/admin/favbook' component={FavBook}></Route> 
+                                <Route path='/admin/user/select' component={Userselect}></Route> 
+                                <Route path='/admin/user/update' component={Userupdate}></Route> 
                             </Admin>
                         )
                     }}></Route>
