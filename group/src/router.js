@@ -10,6 +10,7 @@ const Userselect =loadable(()=>import('./pages/user/userselcet'))
 const Userupdate =loadable(()=>import('./pages/user/userupdate'))
 
 const UserAdd =loadable(()=>import("./pages/user/add"))
+const Reg=loadable(()=>import('./pages/reg/reg'))
 
 
 class RootRoute extends React.Component{
@@ -19,6 +20,7 @@ class RootRoute extends React.Component{
                 <Switch>
                     <Redirect exact from='/' to='/login'></Redirect>
                     <Route path='/login' component={Login}></Route>
+                    <Route path='/reg' component={Reg}></Route> 
                     <Route path='/admin' component={()=>{
                         return(
                             <Admin>
@@ -26,7 +28,8 @@ class RootRoute extends React.Component{
                                 <Route path='/admin/favbook' component={FavBook}></Route> 
                                 <Route path='/admin/user/select' component={Userselect}></Route> 
                                 <Route path='/admin/user/update' component={Userupdate}></Route> 
-                                <Route path='/admin/user/add' component={UserAdd}></Route>              
+                                <Route path='/admin/user/add' component={UserAdd}></Route>  
+                                {/* <Route path='/reg' component={Reg}></Route>             */}
                           </Admin>
                         )
                     }}></Route>
