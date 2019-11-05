@@ -6,10 +6,10 @@ const Login =loadable(()=>import('./pages/login/login'))
 const Admin =loadable(()=>import('./pages/admin/admin'))
 
 const FavBook=loadable(()=>import('./pages/favBook/favbook'))
-const Userselect =loadable(()=>import('./pages/User/userselcet'))
-const Userupdate =loadable(()=>import('./pages/User/userupdate'))
+const Userselect =loadable(()=>import('./pages/user/userselcet'))
+const Userupdate =loadable(()=>import('./pages/user/userupdate'))
 
-const UserAdd =loadable(()=>import("./pages/User/add"))
+const UserAdd =loadable(()=>import("./pages/user/add"))
 
 
 class RootRoute extends React.Component{
