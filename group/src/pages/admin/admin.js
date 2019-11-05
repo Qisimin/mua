@@ -13,7 +13,7 @@ class Admin extends React.Component{
                 
                 </Header>
                 <Layout>
-                    <Sider width={255} style={{ background: '#fff' }} className={Style.up}>
+                    <Sider width={255} style={{ background: '#fff'}} className={Style.up}>
                         <CustomSlider></CustomSlider>
                     </Sider>
                     <Layout style={{ padding: '5px' }}>
@@ -28,7 +28,8 @@ class Admin extends React.Component{
                         }}
                         className={Style.bg}
                         >
-                            Content......................
+                            {this.props.children}
+                            
                         </Content>
                     </Layout>
                 </Layout>

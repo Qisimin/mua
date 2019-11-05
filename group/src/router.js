@@ -5,6 +5,8 @@ import loadable from './utils/loadable'
 const Login =loadable(()=>import('./pages/login/login'))
 const Admin =loadable(()=>import('./pages/admin/admin'))
 
+const UserAdd =loadable(()=>import("./pages/user/add"))
+
 class RootRoute extends React.Component{
     render(){
         return(
@@ -15,7 +17,7 @@ class RootRoute extends React.Component{
                     <Route path='/admin' component={()=>{
                         return(
                             <Admin>
-                                {/*<Route path='/admin/home' component={Home}></Route> */}
+                                <Route path='/admin/user/add' component={UserAdd}></Route>
                                 
                             </Admin>
                         )
