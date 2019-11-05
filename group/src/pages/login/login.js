@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox,message,Card } from 'antd';
 import Style from './index.module.less'
@@ -56,3 +57,15 @@ class Login extends Component {
 
 
 export default Form.create()(Login)
+import React from 'react'
+
+class Login extends React.Component{
+    render(){
+        return(
+           <div>
+                login
+           </div>
+        )
+    }
+}
+export default Login
