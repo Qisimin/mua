@@ -383,11 +383,9 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
-<<<<<<< HEAD
+
                   ['import',{"libraryName":"antd",style:true}],
-=======
-                  ['import',{'libraryName':'antd',style:true}],
->>>>>>> cd2f7720b58f044d61d5df13692d2d7c2325fb9b
+
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {

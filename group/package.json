@@ -7,12 +7,8 @@
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
-<<<<<<< HEAD
-    "antd": "^3.25.0",
-=======
     "antd": "^3.24.3",
     "axios": "^0.19.0",
->>>>>>> cd2f7720b58f044d61d5df13692d2d7c2325fb9b
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
@@ -58,10 +54,7 @@
     "react-app-polyfill": "^1.0.4",
     "react-dev-utils": "^9.1.0",
     "react-dom": "^16.11.0",
-<<<<<<< HEAD
-=======
     "react-loadable": "^5.5.0",
->>>>>>> cd2f7720b58f044d61d5df13692d2d7c2325fb9b
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
