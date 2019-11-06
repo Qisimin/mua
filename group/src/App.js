@@ -1,3 +1,7 @@
+import React, { Component} from 'react';
+
+// import Routers from "./router"
+
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
@@ -25,4 +29,13 @@ function App() {
   );
 }
 
-export default App;
+
+export default class App extends Component {
+  render() {
+    return (
+      <div className='App'>
+      
+      </div>
+    )
+  }
+}

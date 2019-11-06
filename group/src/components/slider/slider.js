@@ -76,8 +76,8 @@ const sliderList=[
     },
     {
         name:'最喜爱书籍',
-        path:'/admin/favourite',
-        key:'/admin/favourite'      
+        path:'/admin/favbook',
+        key:'/admin/favbook'      
     },
     {
         name:'退出',

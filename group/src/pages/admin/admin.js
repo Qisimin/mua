@@ -1,11 +1,14 @@
+
 import React from 'react'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import CustomSlider from '../../components/slider/slider'
+import {withRouter} from 'react-router-dom'
 import Style from './admin.module.less'
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 class Admin extends React.Component{
     render(){
+        console.log(this)
         return(
             <div>
             <Layout>
@@ -13,7 +16,7 @@ class Admin extends React.Component{
                 
                 </Header>
                 <Layout>
-                    <Sider width={255} style={{ background: '#fff' }} className={Style.up}>
+                    <Sider width={255} style={{ background: '#fff'}} className={Style.up}>
                         <CustomSlider></CustomSlider>
                     </Sider>
                     <Layout style={{ padding: '5px' }}>
@@ -28,7 +31,7 @@ class Admin extends React.Component{
                         }}
                         className={Style.bg}
                         >
-                            Content......................
+                            {this.props.children} 
                         </Content>
                     </Layout>
                 </Layout>
@@ -37,4 +40,4 @@ class Admin extends React.Component{
         )
     }
 }
-export default Admin
+export default withRouter(Admin)
