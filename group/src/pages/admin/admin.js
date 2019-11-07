@@ -8,7 +8,7 @@ const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 class Admin extends React.Component{
     render(){
-        console.log(this)
+        // console.log(this)
         return(
             <div>
             <Layout>

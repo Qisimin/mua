@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Icon, Switch } from 'antd';
+import { Menu, Icon, Switch, Dropdown } from 'antd';
 import {withRouter} from 'react-router-dom'
 const { SubMenu } = Menu;
 const sliderList=[
@@ -32,23 +32,18 @@ const sliderList=[
     },
     {
         name:'图书管理',
-        path:'/admin/book',
-        key:'/admin/book' ,
+        path:'/admin/bookmanagement',
+        key:'/admin/bookmanagement' ,
         children:[
                 {
                     name:'添加图书信息',
-                    path:'/admin/book/add',
-                    key:'/admin/book/add',
+                    path:'/admin/bookmanagement/add',
+                    key:'/admin/bookmanagement/add',
                 },                     
                 {
-                    name:'查询图书信息',
-                    path:'/admin/book/select',
-                    key:'/admin/book/select',
-                },  
-                {
-                    name:'更新图书信息',
-                    path:'/admin/book/update',
-                    key:'/admin/book/update',
+                    name:'图书列表',
+                    path:'/admin/bookmanagement/selcet',
+                    key:'/admin/bookmanagement/selcet',
                 },                         
             ]     
     },
@@ -117,7 +112,7 @@ class Slider extends React.Component{
             if(item.children){
                 //渲染次级导航
                 return(
-                    <SubMenu title={item.name}>
+                    <SubMenu title={item.name} key={index} >
                         {this.renderItem(item.children)}
                     </SubMenu>
                 )

@@ -11,6 +11,11 @@ const UserAdd =loadable(()=>import("./pages/user/add"))
 const Reg=loadable(()=>import('./pages/reg/reg'))
 const Logout=loadable(()=>import('./pages/logout/logout'))
 
+// 图书管理
+const BookManagement = loadable(() => import('./pages/bookmanagement/bookmanagement.js'))
+const BookAdd = loadable(() => import('./pages/bookmanagement/bookadd.js'))
+const BookList = loadable(() => import('./pages/bookmanagement/bookselcet.js'))
+
 class RootRoute extends React.Component{
     render(){
         return(
@@ -28,6 +33,13 @@ class RootRoute extends React.Component{
                                 <Route path='/admin/user/update' component={Userupdate}></Route> 
                                 <Route path='/admin/user/add' component={UserAdd}></Route>  
                                 <Route path='/admin/logout' component={Logout}></Route> 
+
+                                {/* 图书管理 Book management */}
+                                <Route path='/admin/bookmanagement' component={BookManagement}></Route>
+                                <Route path='/admin/bookmanagement/add' component={BookAdd}></Route>
+                                <Route path='/admin/bookmanagement/selcet' component={BookList}></Route>
+                                
+                                
                           </Admin>
                         )
                     }}></Route>

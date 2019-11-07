@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+
+
 // import App from './App';
 // import App from './pages/admin/admin'
 import App from './router'
+import axios from './utils/axios.js';
 import * as serviceWorker from './serviceWorker';
+
+React.Component.prototype.$axios = axios;
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -52,7 +52,7 @@ const root = [
               ]
           },{
               name:'图书管理',
-              path:'',
+              path:'/admin/bookmanagement',
               key:'2',
               childrern:[
                   {
@@ -62,23 +62,11 @@ const root = [
                       
                   },
                   {
-                      name:'查询图书信息',
+                      name:'图书列表',
                       path:'',
                       key:'3',
                       
                   },
-                  {
-                      name:'修改图书信息',
-                      path:'',
-                      key:'3',
-                      
-                  },
-                  {
-                      name:'删除图书信息',
-                      path:'',
-                      key:'3',
-                      
-                  }
               ]
           },{
               name:'借阅信息管理',
@@ -143,7 +131,7 @@ export default class customSlider extends Component {
       return data.map((item,index)=>{
         if(item.children){
           return(
-            <SubMenu title={item.name}>
+            <SubMenu title={item.name} key={index} >
               {this.renderItem(item.children)}
             </SubMenu>
           )
