@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter,Link,Switch,Route,withRouter,Redirect} from 'react-router-dom'
+import {HashRouter,Switch,Route,Redirect} from 'react-router-dom'
 import loadable from './utils/loadable'
 
 const Login =loadable(()=>import('./pages/login/login'))
@@ -13,7 +13,6 @@ const Logout=loadable(()=>import('./pages/logout/logout'))
 
 // 图书管理
 const BookManagement = loadable(() => import('./pages/bookmanagement/bookmanagement.js'))
-const BookAdd = loadable(() => import('./pages/bookmanagement/bookadd.js'))
 const BookList = loadable(() => import('./pages/bookmanagement/bookselcet.js'))
 
 class RootRoute extends React.Component{
@@ -36,7 +35,6 @@ class RootRoute extends React.Component{
 
                                 {/* 图书管理 Book management */}
                                 <Route path='/admin/bookmanagement' component={BookManagement}></Route>
-                                <Route path='/admin/bookmanagement/add' component={BookAdd}></Route>
                                 <Route path='/admin/bookmanagement/selcet' component={BookList}></Route>
                                 
                                 

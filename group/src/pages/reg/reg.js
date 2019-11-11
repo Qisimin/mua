@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Form,Input,Tooltip,Icon,Cascader,Select,Row,Col,Checkbox,Button,AutoComplete,Card} from 'antd';
+import {Form,Input,Tooltip,Icon,Select,Button,AutoComplete,Card} from 'antd';
 import Style from './index.module.less'
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;

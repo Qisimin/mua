@@ -1,6 +1,7 @@
 import React,{Fragment} from 'react';
 import { Card, Table, message, Spin, Pagination, Popconfirm, Button } from 'antd';
 
+import BookAdd from './bookadd.js';
 import BookUpdate from './bookupdate.js';
 
 class BookList extends React.Component {
@@ -53,11 +54,25 @@ class BookList extends React.Component {
     super()
     this.state = {
       dataSource: [],
+      name: '',
+      booktype: '',
+      pic: '',
+      price: '',
+      desc: '',
       page: 1, // 当前页码
       pageSize: 3, // 每页放的条数
       total: 0, // 数据总条数 默认 0
       spinning: true,
-      updateShow: false
+      updateShow: false,
+      addShow: false,
+    }
+  }
+  cacelAdd = (state) => {
+    if (state) {
+      this.getBookList(this.state.page,this.state.pageSize)
+      this.setState({addShow: false})
+    } else {
+      this.setState({addShow: false})
     }
   }
   cacelUpdate = (state) => {
@@ -67,6 +82,9 @@ class BookList extends React.Component {
     } else {
       this.setState({updateShow: false})
     }
+  }
+  addBook = () => {
+    this.setState({addShow: true})
   }
   updataBook = (data) => {
     this.data = data
@@ -79,7 +97,7 @@ class BookList extends React.Component {
       if (data.err === 0) {
         message.success('删除成功')
         // 删除成功之后 请求最新数据 刷新页面
-        this.getBookList(this.state.page,this.state.pageSize)
+        this.pageChange(this.state.page,this.state.pageSize)
       }
     })
   }
@@ -87,6 +105,10 @@ class BookList extends React.Component {
     this.getBookList(this.state.page,this.state.pageSize)
   }
   getBookList (page,pageSize) {
+    console.log(page,pageSize)
+    if (page == 0) {
+      page ++
+    }
     this.setState({spinning: true})
     // console.log(this)
     this.$axios.post('/api/admin/book/reader',{page,pageSize})
@@ -97,7 +119,22 @@ class BookList extends React.Component {
         if (Math.ceil(data.total/this.state.pageSize) < page) {
           tmppage = Math.ceil(data.total/this.state.pageSize)
         }
-        this.setState({total: data.total,spinning: false,page: tmppage,dataSource: data.list})
+        // console.log(page,pageSize,'111')
+        // console.log(this.state.dataSource,'111')
+          this.setState({total: data.total,spinning: false,page: tmppage,dataSource: data.list},()=>{
+            console.log(this.state.dataSource)
+            if (this.state.dataSource.length == 0) {
+              if (page > 1) {
+                page--
+              } else {
+                return
+              }
+              // console.log(123)
+              this.getBookList(page,pageSize)
+            } else {
+            }
+          }
+          )
       }
     })
   }
@@ -109,10 +146,12 @@ class BookList extends React.Component {
     this.getBookList(page,pageSize)
   }
   render () {
-    let {dataSource,page,pageSize,total,spinning,updateShow} = this.state
+    let {dataSource,page,pageSize,total,spinning,updateShow,addShow} = this.state
     let data = this.data
+    let {name,booktype,pic,price,desc} = this.state
     return (
       <div>
+        <Button onClick={this.addBook}>添加图书</Button>
         <Card>
           <Spin spinning={spinning}>
             <Table 
@@ -133,8 +172,13 @@ class BookList extends React.Component {
         {!updateShow || <BookUpdate cacelUpdate={this.cacelUpdate}
         data={data}
         >
-
         </BookUpdate> }
+        {!addShow || <BookAdd
+          cacelAdd={this.cacelAdd}
+          date={{name,booktype,pic,price,desc}}
+        >
+
+        </BookAdd>}
       </div>
     )
   }

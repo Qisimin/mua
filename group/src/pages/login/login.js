@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Icon, Input, Button, Checkbox,message,Card } from 'antd';
+import { Form, Icon, Input, Button, Checkbox,Card } from 'antd';
 import Style from './index.module.less'
 import {Link} from 'react-router-dom'
 

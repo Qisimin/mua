@@ -13,13 +13,13 @@ import Style from './index.module.less';
  class BookUpdate extends React.Component {
   constructor (props) {
     super()
+    // console.log(props)
     this.state = props.data
   }
   submit = () => {
-    let {name,booktype,pic,price,desc} = this.state
-    this.$axios.post('/api/admin/book/update',{name,booktype,pic,price,desc})
+    let {name,booktype,pic,price,desc,_id} = this.state
+    this.$axios.post('/api/admin/book/update',{name,booktype,pic,price,desc,_id})
     .then((data) => {
-      console.log(data)
       if (data.err === 0) {
         message.success('修改成功')
         this.props.cacelUpdate(1)

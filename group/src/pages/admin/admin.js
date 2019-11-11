@@ -1,10 +1,10 @@
 
 import React from 'react'
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu } from 'antd';
 import CustomSlider from '../../components/slider/slider'
 import {withRouter} from 'react-router-dom'
 import Style from './admin.module.less'
-const { SubMenu } = Menu;
+// const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 class Admin extends React.Component{
     render(){

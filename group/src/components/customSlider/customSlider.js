@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {withRouter} from 'react-router-dom'
-import { Menu, Icon } from 'antd';
+// import {withRouter} from 'react-router-dom'
+import { Menu } from 'antd';
 const { SubMenu } = Menu;
 const root = [
   {
@@ -56,14 +56,8 @@ const root = [
               key:'2',
               childrern:[
                   {
-                      name:'添加图书信息',
-                      path:'',
-                      key:'3',
-                      
-                  },
-                  {
-                      name:'图书列表',
-                      path:'',
+                      name:'图书信息',
+                      path:'/admin/bookmanagement/selcet',
                       key:'3',
                       
                   },

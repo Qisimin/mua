@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Icon, Switch, Dropdown } from 'antd';
+import { Menu, Switch } from 'antd';
 import {withRouter} from 'react-router-dom'
 const { SubMenu } = Menu;
 const sliderList=[
@@ -34,14 +34,9 @@ const sliderList=[
         name:'图书管理',
         path:'/admin/bookmanagement',
         key:'/admin/bookmanagement' ,
-        children:[
+        children:[                
                 {
-                    name:'添加图书信息',
-                    path:'/admin/bookmanagement/add',
-                    key:'/admin/bookmanagement/add',
-                },                     
-                {
-                    name:'图书列表',
+                    name:'图书信息',
                     path:'/admin/bookmanagement/selcet',
                     key:'/admin/bookmanagement/selcet',
                 },                         
